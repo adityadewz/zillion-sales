@@ -1,0 +1,70 @@
+<style>
+/*  input{
+color: #000;
+}*/
+</style>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+        Opportunity Information
+        </h1>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tr>
+              <th>Company name</th>
+              <th>Name</th>
+              <th>Account type</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Title</th>
+              <th>Address</th>
+              <th>Keynotes</th>
+            </tr>
+            <tr ng-repeat="item in data" ng-class="{'highlight':item.name+item.number+item.keyNotes===secret}" class="pipeline-table">
+              <td>{{item.company}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.accType}}</td>
+              <td>{{item.number}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.title}}</td>
+              <td> {{item.address}}</td>
+              <td> {{item.keyNotes}}</td>
+              <td>{{item.amount}}</td>
+              <td> {{item.notes}}</td>
+              <td> {{item.data}}</td>
+              <td> {{item.keyNotes}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="row" style="margin-top: -10px;">
+          <div class="col-md-3">
+            <select class="form-control" ng-model="opportunity.conversion" style="width:100%">
+              <option ng-selected="true">Leads at final stage of conversion</option>
+              <option value="low">Low: 50-70</option>
+              <option value="medium">Medium: 70-85</option>
+              <option value="high">High: 85-100</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input type="text" ng-model="opportunity.finalNotes" style="color: #000;" class="form-control" placeholder="Add some final notes..">
+          </div>
+          <div class="col-md-3">
+            <input type="text" style="color: #000;" ng-model="opportunity.discount" class="form-control" placeholder="Discount in %">
+          </div>
+          <div class="col-md-3">
+            <button style="width: 100%;" class="btn btn-success btn-icon" ng-click="createInvoice(opportunity,isDisabled)" ng-disabled="isDisabled">
+            Send for Aproval <i class="ion-android-download"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

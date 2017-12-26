@@ -1,0 +1,202 @@
+<style>
+  .al-title{
+    display: none;
+
+  }
+ .panel select {
+    width: 300px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 0;
+    float: none;
+}
+.form-group{
+      margin-bottom: 40px;
+}
+</style>
+<div class="row">
+  <div class="col-md-12">
+  <div class="panel">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      Form
+    </h1>
+  </div>
+    <div class="panel-body">
+    <form class="form-horizontal" name="contactForm">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Company Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.company" placeholder="Enter company name.." required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.name" placeholder="Enter name.." required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="select" class="col-sm-2 control-label">Select Account Type</label>
+    <div class="col-sm-8">
+    <select id="select" class="form-control" ng-model="info.accType" required>
+      <option ng-selected="true">Account Type</option>
+      <option value="large">Large</option>
+      <option value="sme">SME</option>
+      <option value="strategic">Strategic</option>
+    </select>
+  <!--       <input type="text" class="form-control" id="inputEmail3" placeholder="Enter company name..">
+ -->    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Number</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.number" placeholder="Enter Number.." required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.email" placeholder="Enter email address" required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.title" placeholder="Enter title" required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" ng-model="info.address" placeholder="Enter Address" required>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Key Notes</label>
+    <div class="col-sm-8">
+      <textarea class="form-control" ng-model="info.keyNotes" placeholder="Enter key notes"></textarea>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+  
+  <!-- <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-warning" ng-click="addToLead(info,contactForm.$valid)">Convert to lead TAB</button>
+    </div>
+  </div>
+</form>  
+    </div>
+  </div>
+    
+  </div>
+</div>
+<!-- 
+<div class="row">
+  <div class="col-md-12">
+
+  <div class="panel">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        Contact Form
+      </h1>
+    </div>
+    <div class="panel-body">
+        <form>
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Company">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <select id="accType" style="float:none;" placeholder="Account Type" class="form-control">
+      <option>
+        Account Type
+      </option>
+      <option value="large">
+        Large
+      </option>
+      <option value="sme">SME
+      </option>
+      <option value="strategic">Strategic
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Number">
+  </div>
+
+  <div class="form-group">
+    <input type="email" class="form-control" id="company" placeholder="Email">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Title">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Address">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Key Notes">
+  </div>
+
+
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="company" placeholder="Number">
+  </div>
+ -->
+<!-- 
+ 
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div> -->
+<!--         <div class="button-wrapper"><button type="button" class="btn btn-primary">Convert to Lead tab</button></div>
+
+</form>
+    </div>
+
+  </div> -->
+<!--   
+  </div>
+</div>
+</div> -->

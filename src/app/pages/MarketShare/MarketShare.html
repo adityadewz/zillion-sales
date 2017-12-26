@@ -1,0 +1,76 @@
+
+<div class="row">
+	<div class="col-md-12">
+
+  <div class="panel" ng-controller="MarketShareChart1Ctrl">
+    <div class="panel-heading"><h1 class="panel-title">
+      Market Share Comparison vs Competitors(%)
+    </h1></div>
+    <div class="panel-body">
+            <div id="MarketShareCHart1" class="admin-chart"></div>
+    </div>
+       <div class="panel-footer">
+                          <div class="footer-select">
+                        <!--   <div class="pull-left">
+                           <label class="radio-inline">
+  <input type="radio" id="inlineCheckbox1" value="productWise" ng-model="showBy.product" ng-change="showByWise(showBy.product)"> Product Wise
+</label>
+<label class="radio-inline">
+  <input type="radio" id="inlineCheckbox2" value="monthWise" ng-model="showBy.product" ng-change="showByWise(showBy.product)" ng-checked="true"> Month Wise
+</label> 
+                          </div> -->
+               <!-- <select ng-model="showBy.wise" ng-change="changeByWise(showBy.product,showBy.wise)" class="pull-left">
+              <option value="2017" ng-selected="true">Product Wise</option>
+              <option value="2016">Month Wise</option>
+            </select> -->
+            <select ng-model="showBy.product" ng-change="changeByproduct(showBy.product)" class="pull-right">
+              <option value="a" ng-selected="true">Product A</option>
+              <option value="b">Product B</option>
+            </select>
+          
+            </div>
+            </div>
+  </div>
+        </div>
+</div>
+
+<div class="row">
+     <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            Data by Product and by month
+                        </h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                <tr>
+                                <th>Category</th>
+                                <th ng-repeat="item in data">{{item.month}}</th>      
+                                </tr>
+                                <tr>
+                                  <td>Product A</td>
+                                  <td ng-repeat="item in data">{{item.tc}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Product B</td>
+                                  <td ng-repeat="item in data">{{item.tr}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Product C</td>
+                                  <td ng-repeat="item in data">{{item.pr}}</td>
+                                </tr>
+
+                                 <tr>
+                                  <td>Product D</td>
+                                  <td ng-repeat="item in data">{{item.pr}}</td>
+                                </tr>
+                                </table>
+                            </div>
+                        </div>
+                  
+                    </div>
+                </div>
+
+</div>

@@ -1,0 +1,300 @@
+<div class="row">
+
+ <div class="col-md-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Booked Business
+        </h1>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+        <tr>
+          <th>Category</th>
+          <th>Revenue</th>
+        </tr>
+          <tr>
+            <td>Booked Business</td>
+            <td>$240M</td>
+          </tr>
+          <tr>
+            <td>Target</td>
+            <td>$150M</td>
+          </tr>
+          <tr>
+            <td>Total Collection
+            </td>
+            <td>$80M
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+   <div class="col-md-5">
+    <div class="panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Sales Trend
+        </h1>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+        <tr>
+        <th>Category</th>
+          <th>Q1</th>
+          <th>Q2</th>
+          <th>Q3</th>
+        </tr>
+          <tr>
+            <td>Avg. Deal Size</td>
+            <td>2400</td>
+            <td>1400</td>
+            <td>1400</td>
+          </tr>
+          <tr>
+            <td>Total Accounts</td>
+            <td>1500</td>
+            <td>1570</td>
+            <td>1570</td>
+          </tr>
+          <tr>
+            <td>Total Collection
+            </td>
+            <td>8120</td>
+            <td>1240</td>
+                        <td>1570</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+   <div class="col-md-3">
+    <div class="panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Account Summary
+        </h1>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+        <tr>
+          <th>Category</th>
+          <th>Quantity</th>
+        </tr>
+          <tr>
+            <td>Active Accounts</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Total Refund Accounts</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Lost Accounts
+            </td>
+            <td>50
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="row">
+ 
+   <div class="col-md-6">
+    <div class="panel" ng-controller="chart1Ctrl">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Quota attained by Sales Manager <select ng-model="viewByChart1">
+          <option value="chart">Chart</option>
+            <option value="table">Table</option>
+          </select>
+        </h1>
+        </div>
+        <div class="panel-body">
+             <div id="barChart" class="admin-chart" ng-show="viewByChart1==='chart'"></div>   
+             <div class="chart-table" ng-show="viewByChart1==='table'">
+             <div class="table-responsive">
+               <table class="table">
+                 <tr>
+                   <th>
+                     Country
+                   </th>
+                   <th>
+                     Target
+                   </th>
+                 </tr>
+                 <tr ng-repeat="item in data">
+                   <td>
+                     {{item.country}}
+                   </td>
+                   <td>
+                     {{item.Target}}
+                   </td>
+                 </tr>
+               </table>
+             </div>  
+             </div>
+             
+        </div>
+    </div>
+    </div>
+
+   <div class="col-md-6">
+    <div class="panel" ng-controller="chart4Ctrl">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Pipeline report by segment <select ng-model="viewByChart4">
+          <option value="chart">Chart</option>
+            <option value="table">Table</option>
+          </select>
+        </h1>
+        </div>
+        <div class="panel-body">
+             <div id="barChart3" class="admin-chart" ng-show="viewByChart4==='chart'"></div>   
+             <div class="chart-table" ng-show="viewByChart4==='table'">
+             <div class="table-responsive">
+               <table class="table">
+                 <tr>
+                   <th>
+                     Country
+                   </th>
+                   <th>
+                     Target
+                   </th>
+                 </tr>
+                 <tr ng-repeat="item in data">
+                   <td>
+                     {{item.country}}
+                   </td>
+                   <td>
+                     {{item.Target}}
+                   </td>
+                 </tr>
+               </table>
+             </div>  
+             </div>
+             
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+   <div class="col-md-6">
+    <div class="panel" ng-controller="chart3Ctrl">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Accounts won per segment <select ng-model="viewByChart3">
+          <option value="chart">Chart</option>
+            <option value="table">Table</option>
+          </select>
+        </h1>
+        </div>
+        <div class="panel-body">
+      <div id="clusteredBarChart" class="admin-chart" ng-show="viewByChart3==='chart'"></div>
+             <div class="chart-table" ng-show="viewByChart3==='table'">
+             <div class="table-responsive">
+               <table class="table">
+                 <tr>
+                   <th>
+                     Segment
+                   </th>
+                   <th>
+                     Past Quarter
+                   </th>
+                   <th>
+                     Current Quarter
+                   </th>
+                 </tr>
+                 <tr ng-repeat="item in data">
+                   <td>
+                     {{item.segment}}
+                   </td>
+                   <td>
+                     {{item["p-quarter"]}}
+                   </td>
+                   <td>
+                     {{item["c-quarter"]}}
+                   </td>
+                 </tr>
+               </table>
+             </div>  
+             </div>
+             
+        </div>
+    </div>
+    </div>
+        <div class="col-md-6">
+    <div class="panel" ng-controller="chart2Ctrl">
+        <div class="panel-heading">
+          <h1 class="panel-title">
+            Business Booked per Month
+           <select ng-model="viewByChart2">
+          <option value="chart" ng-selected="true">Chart</option>
+            <option value="table">Table</option>
+          </select>
+          </h1>
+          </div>
+          <div class="panel-body">
+               <div id="barChart2" class="admin-chart" ng-show="viewByChart2==='chart'"></div>
+                <div class="chart-table" ng-show="viewByChart2==='table'">
+             <div class="table-responsive">
+               <table class="table">
+                 <tr>
+                   <th>
+                     Month
+                   </th>
+                   <th>
+                     Target
+                   </th>
+                  
+                 </tr>
+                 <tr ng-repeat="item in data[myYear][mySegment]">
+                   <td>
+                     {{item.month}}
+                   </td>
+                   <td>
+                     {{item.Target}}
+                   </td>
+              
+                 </tr>
+               </table>
+             </div>  
+             </div>   
+          </div>
+          <div class="panel-footer">
+          
+            <div class="footer-select">
+               <select ng-model="myYear" ng-change="changeByYear(myYear)" class="pull-left">
+              <option value="2017" ng-selected="true">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+            </select>
+            <select ng-model="mySegment" ng-change="changeBySegment(mySegment)" class="pull-right">
+              <option value="all" ng-selected="true">All</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  </div>

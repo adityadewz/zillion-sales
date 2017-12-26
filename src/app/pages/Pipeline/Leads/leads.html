@@ -1,0 +1,73 @@
+<style>
+/*  input{
+        color: #000;
+
+  }*/
+</style>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+        Leads Information
+        </h1>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>Company name</th>
+              <th>Name</th>
+              <th>Account type</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Title</th>
+              <th>Address</th>
+              <th>Keynotes</th>
+            </tr>
+            <tr ng-repeat="item in data" ng-click="copyToOpportunity(item);" ng-class="{'highlight':item.name+item.number+item.keyNotes===secret}" class="pipeline-table">
+              <td>{{item.company}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.accType}}</td>
+              <td>{{item.number}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.title}}</td>
+              <td> {{item.address}}</td>
+              <td> {{item.keyNotes}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="panel-footer">
+
+<!--       <div>{{opportunity | json}}</div>
+ -->
+        <div class="row" style="margin-top: -10px;">
+          <div class="col-md-3 col-xs-6">
+            <p class="input-group">
+              <input type="text" style="color: #000;" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="lead.date" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" placeholder="Closure Date"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <input type="text" ng-model="lead.amount" style="color: #000;" class="form-control" placeholder="Ticket amount">
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <input type="text" style="color: #000;" ng-model="lead.notes" class="form-control" placeholder="Add Notes..">
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <button style="width: 100%;" class="btn btn-success" ng-click="addToOpportunity(lead)" ng-disabled="isDisabled">
+                Convert to Opportunity
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

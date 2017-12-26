@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="horizontal-scroll">
+  <table class="table table-bordered" st-table="editableTableData">
+    <thead>
+    <tr class="sortable">
+      <th st-sort="name">Name</th>
+      <th st-sort="ticketNo">Ticket No.</th>
+      <th st-sort="accName">Account Name</th>
+      <th st-sort="productLine">Product Line</th>
+      <th st-sort="productName">Product Name</th>
+      <th st-sort="quantity">Quantity</th>
+      <th st-sort="location">Location</th>
+      <th st-sort="customerType">Customer Type</th>
+      <th st-sort="CS">Contract Size</th>
+      <th st-sort="ECD">Expected Closure data</th>
+      <th st-sort="DO">Discount offered in %</th>
+      <th st-sort="approval">Approval</th>
+      <th st-sort="remarks">Remarks</th>
+</tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in smartTableData" class="editable-tr-wrap">
+      <td><span  blur="cancel">{{item.name}}</span></td>
+      <td><span  blur="cancel">{{item.ticketNo}}</span></td>
+      <td><span  blur="cancel" class="accName">{{item.accName}}</span></td>
+      <td><span  blur="cancel">{{item.productLine}}</span></td>
+      <td><span  blur="cancel">{{item.productName}}</span></td>
+      <td><span  blur="cancel">{{item.quantity}}</span></td>
+      <td><span  blur="cancel">{{item.location}}</span></td>
+      <td><span  blur="cancel">{{item.customerType}}</span></td>
+      <td><span  blur="cancel">{{item.CS | currency:'$'}}</span></td>
+      <td><span  blur="cancel">{{item.ECD | date : 'fullDate'}}</span></td>
+      <td><span  blur="cancel">{{item.DO}}</span></td>
+      <td>
+      <span  blur="cancel">
+      <span class="ion-android-checkbox approval-icon" ng-class="{approved:item.approval}" ng-click="approval(item,true)"></span>
+      <span class="ion-android-cancel approval-icon" ng-class="{notApproved:!item.approval}" ng-click="approval(item,false)"></span>
+      </td>
+      <td colspan=4 class="remarks"><span editable-text="item.remarks" blur="cancel">{{item.remarks}}</span></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="12" class="text-center">
+        <div st-pagination="" st-items-by-page="12" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+  </div>
+</div>
+
